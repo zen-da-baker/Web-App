@@ -1,7 +1,44 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { useState, useEffect } from 'react';
+
 function App() {
+
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    readData();
+  }, []);
+
+  function increment() {
+
+    setCount((prevCount) => prevCount + 1);
+
+    const countData = {
+      count: count + 1
+    }
+
+    const jsonData = JSON.stringify(countData);
+
+    localStorage.setItem('count', jsonData);
+
+  }
+
+  function readData() {
+
+    const jsonData = localStorage.getItem('count');
+
+    const data = JSON.parse(jsonData);
+
+    if (data === null) {
+      return;
+    }
+
+    setCount(data.count);
+
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,7 +55,7 @@ function App() {
           Learn React
         </a>
 
-        <button className="btn">Count</button>
+        <button className="btn" onClick={increment}>Count { count }</button>
       </header>
     </div>
   );
