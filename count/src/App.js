@@ -3,6 +3,7 @@ import './App.css';
 
 import { useState, useEffect } from 'react';
 
+
 function App() {
 
   const [count, setCount] = useState(0);
@@ -56,6 +57,8 @@ function App() {
         </a>
 
         <button className="btn" onClick={increment}>Count { count }</button>
+
+        <input type="file" />
       </header>
     </div>
   );
