@@ -59,3 +59,11 @@ function square(number) {
 let number = square(2);
 console.log(number);
 console.log(square(2));
+
+function readCount() {
+
+}
+
+function writeCount() {
+
+}
