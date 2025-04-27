@@ -34,6 +34,8 @@ console.log(potato.name);
 //Bracket Notation
 potato['name'] = 'Potato';
 
+console.log(potato);
+
 // Selections
 let selection = 'name';
 potato[selection] = 'Potato';
